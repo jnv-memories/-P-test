@@ -13,17 +13,17 @@ const NumPoints = 60; in pdollar.js, originally its value was 32 but can be incr
 
 currently added predefined strokes set from https://github.com/ytnrvdf/wha-spell-simulator/blob/main/src/dictionary/sigils.json to add fire and water sigil as example in stokesData.js
 
-in https://github.com/ytnrvdf/wha-spell-simulator/blob/main/src/dictionary/sigils.json the strokes are in format of "Normalized Unit-Square Coordinates"(
+in https://github.com/ytnrvdf/wha-spell-simulator/blob/main/src/dictionary/sigils.json the strokes are in format of "Normalized Unit-Square Coordinates"
 
         [{"x": 0.5,"y": 0}, {"x": 0.506,"y": 0}, {"x": 0.512,"y": 0.006}, {"x": 0.518,"y": 0.006}, ...
         ] value between 0 to 1
-        ) 
-but $P uses "Absolute 1D Point Cloud" [
-  Point { X: 250, Y: 0,   ID: 1 },
-  Point { X: 253, Y: 0,   ID: 1 },
-  Point { X: 256, Y: 3,   ID: 1 },
-  Point { X: 100, Y: 100, ID: 2 }  // A second stroke flattened into the same array
-] 
+        
+but $P uses "Absolute 1D Point Cloud" 
+        
+        [Point { X: 250, Y: 0,   ID: 1 },
+        Point { X: 253, Y: 0,   ID: 1 },
+        Point { X: 256, Y: 3,   ID: 1 },
+        Point { X: 100, Y: 100, ID: 2 }  // A second stroke flattened into the same array]
 
 the conversion is done by parseCustomJsonTemplate() func in app.js  So it expects the Normalised Unit-Square Coordinate from strokesData.js 
 Any new sigil sign can be added via strokesData.js in fixed formate or can be added directly from canvas.
