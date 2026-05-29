@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$P </title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="pdollar.js"></script>
+</head>
+<body>
+
+    <h1>$P tests </h1>
+
+    <div class="container">
+        <div class="canvas-container">
+            <canvas id="drawCanvas" width="500" height="500"></canvas>
+        </div>
+
+        <div class="controls">
+            <div>
+                <label class="section-title">Canvas</label>
+                <div class="btn-group">
+                    <button class="secondary" id="btnUndo">Undo Stroke</button>
+                    <button class="secondary" id="btnRedo">Redo Stroke</button>
+                    <button class="danger" id="btnClear">Clear Canvas</button>
+                </div>
+            </div>
+
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="chkShowPoints" checked> Show Points</label>
+                <label><input type="checkbox" id="chkShowStrokes" checked> Show Stroke Paths</label>
+            </div>
+
+            <hr class="divider">
+
+            <div>
+                <label class="section-title">Save Custom Gesture</label>
+                <div class="input-group">
+                    <input type="text" id="gestureName">
+                    <button class="success" id="btnSave">Save Template</button>
+                </div>
+                <div class="template-list" id="templateList">
+                    </div>
+            </div>
+
+            <hr class="divider">
+
+            <div>
+                <label class="section-title">3. Live Recognition</label>
+                <button class="primary" id="btnRecognize">Recognize Drawing</button>
+                <div id="result-panel">
+                    <div class="result-title">Result:</div>
+                    <div id="score">...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
